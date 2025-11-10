@@ -1,0 +1,312 @@
+**==Writing S-Class Help Articles on BrainLift==**
+
+- **==Owner(s)==**
+  - Benji Bizzell
+- **==Purpose==**
+  - **In Scope:** Creating clear, actionable, learning-science-backed documentation specifically for BrainLift and BrainMaxxing concepts that reduces confusion, accelerates adoption, and enables both beginners and advanced users to build effective knowledge structures.
+  - **Out of Scope:** General technical writing best practices, API documentation, marketing copy, academic papers on knowledge management, or documentation for other non-BrainLift tools and platforms.
+- **==DOK4 - Spiky Points of View==**
+  - **The best BrainLift documentation is embarrassingly incomplete.** Most documentation fails by trying to be comprehensive, but S-Class BrainLift articles should cover only 20% of possible content - the 20% that enables 80% of value creation. Just as Progressive Summarisation shows only 5% of sources reach final form, and cognitive load theory proves we can only handle 3-7 items at once, BrainLift documentation should aggressively exclude rather than include. If you're not slightly embarrassed by what you left out, you included too much.
+  - **Confusion is a feature, not a bug.** Traditional documentation aims to eliminate all confusion, but S-Class BrainLift articles should create productive confusion at DOK boundaries. When readers hit the bright lines between DOK2 summaries and DOK3 insights, or between DOK3 insights and DOK4 SPOVs, they should feel the cognitive friction of levelling up. This confusion signals the transition from consuming to creating knowledge. Documentation that never confuses never transforms.
+  - **S-Class documentation expires by design.** Most documentation tries to be timeless, but S-Class BrainLift articles should have built-in expiration dates. Following Anne-Laure's cringe principle and Wes's advocacy requirement, great BrainLift documentation takes positions strong enough that they'll be wrong within 18 months. Documentation that's still correct after two years wasn't spiky enough to drive real learning. The goal isn't to be right forever but to be useful right now.
+- **==DOK3 - Insights==**
+  - **Documentation succeeds through productive incompleteness** - Whether it's SPOVs inviting disagreement, Diátaxis separating concerns, or Progressive Summarisation leaving 95% at shallow layers, the best documentation explicitly designs for selective consumption rather than comprehensive coverage.
+  - **Cognitive constraints drive quality** - The 2500-token BrainLift limit, working memory's 3-7 item capacity, and Progressive Summarisation's aggressive reduction all show that arbitrary limitations force the distillation that creates value. Documentation improves by subtracting, not adding.
+  - **Value emerges through use, not planning** - Progressive Summarisation's organic surfacing of important notes, Sequin's discovery that their quick-start was backwards, and Tom's ever-growing 900-page course all demonstrate that documentation quality comes from iteration with real users, not upfront design.
+  - **Expertise reversal demands dual documentation strategies** - What helps novices hurts experts (CLT), tutorials become reference (Diátaxis), and germane load becomes extraneous (Sweller). Documentation must either pick an audience or provide clear paths for both.
+  - **Public accountability transforms private knowledge** - SPOVs require brave advocacy, rigorous thinking demands written exposure, public writing forces clarity (Anne-Laure), and community provides the accountability that makes frameworks stick (BASB). Documentation written in isolation lacks the friction that creates quality.
+  - **Structure should map to cognitive journey, not content taxonomy** - CODE organises by actionability not topic, Diátaxis by user needs not content type, Progressive Disclosure by choice depth not information hierarchy. The user's mental model, not the author's, must drive organisation.
+  - **Psychological safety enables knowledge creation** - Leaders sharing uncertainties (Anne-Laure), questions flowing all directions (Wes), and AI catching our mixing of types (Sequin) all show that admitting confusion and inviting challenge strengthens rather than weakens documentation authority.
+  - **The cringe factor signals growth** - Anne-Laure's observation that not cringing at old work means you haven't grown applies directly to documentation: static docs that never embarrass their authors are dead documents. Living documentation requires accepting today's best will be tomorrow's cringe.
+- **==Experts==**
+  - **Wes Kao**
+    - Who: Co-founder of Maven and altMBA, Marketing and Product Strategy Expert
+    - Focus: Spiky points of view, online education, clear communication, rigorous thinking
+    - Why Follow: Her concept of "spiky POV" directly aligns with BrainLift's DOK4, and she specialises in making complex ideas accessible and compelling through frameworks
+    - Where: @weskao (Twitter), [weskao.com](http://weskao.com/), LinkedIn, Maven
+  - **Tiago Forte**
+    - Who: Founder of Forte Labs, Author of "Building a Second Brain" and "The PARA Method"
+    - Focus: Personal knowledge management, productivity systems, CODE methodology
+    - Why Follow: His CODE method (Capture, Organize, Distill, Express) maps perfectly to the DOK progression and shows how to systematically process information into actionable knowledge
+    - Where: @fortelabs (Twitter), fortelabs.com, buildingasecondbrain.com
+  - **Anne-Laure Le Cunff**
+    - Who: Founder of Ness Labs, Neuroscientist at King's College London, ex-Googler
+    - Focus: Mindful productivity, neuroscience-based learning, experimental mindset
+    - Why Follow: Bridges the gap between neuroscience and practical knowledge management, explaining WHY certain documentation approaches work better for human cognition
+    - Where: @anthilemoon (Twitter), nesslabs.com, anne-laure.net
+  - **Tom Johnson**
+    - Who: Senior Technical Writer at Google, Creator of I'd Rather Be Writing
+    - Focus: API documentation, progressive disclosure, docs-as-code
+    - Why Follow: Practical, in-the-trenches perspective on making complex technical concepts accessible through structured documentation and progressive complexity
+    - Where: @tomjohnson (Twitter), idratherbewriting.com, LinkedIn
+  - **John Sweller**
+    - Who: Educational Psychologist, Professor Emeritus at UNSW Sydney
+    - Focus: Cognitive Load Theory, instructional design, learning architecture
+    - Why Follow: His research on cognitive load directly informs how we should structure BrainLift materials to avoid overwhelming learners whilst maximising retention
+    - Where: Academic papers on Google Scholar, research publications
+  - **Daniele Procida (Diátaxis)**
+    - Who: Creator of the Diátaxis documentation framework
+    - Focus: Documentation architecture, four-quadrant model (tutorials, how-to, reference, explanation)
+    - Why Follow: His systematic approach to documentation types maps perfectly to different DOK levels and learning stages in BrainLift
+    - Where: diataxis.fr, documentation.divio.com
+- **==DOK2 - Knowledge Tree==**
+  - **==Making Documentation Compelling==**
+    - **==Section Summary==**
+      - Compelling documentation combines strong positions (SPOVs) with rigorous thinking and experimental mindset. Writers must be brave enough to advocate for defensible but debatable perspectives, disciplined enough to expose their logic to scrutiny, and curious enough to treat documentation as exploration rather than declaration. This synthesis of conviction and curiosity creates productive friction that transforms passive readers into active thinkers, making the documentation both memorable and genuinely useful for knowledge creation.
+    - **==Sources==**
+      - **"Spiky point of view: Let's get a little controversial" - Wes Kao (2020)**
+        - **==DOK2 Summary==**
+          - A spiky point of view is a perspective others can disagree with that you're willing to advocate for, based on your expertise. It's unique to each person, rooted in conviction and authenticity, making it nearly impossible to imitate. SPOVs teach your audience something relevant they don't already know, are defensible but not universal truths, and require bravery to advocate for. They differentiate you by showing you think rigorously about your craft, making you memorable and helping you stand out in noisy, competitive environments.
+        - **==DOK1 Facts==**
+          - A spiky POV is a perspective others can disagree with - if everyone agrees, it's too middle of the road
+          - SPOVs are your thesis about topics in your realm of expertise
+          - Each person's spiky POV is the culmination of their experience, skills, personality, instincts, and intuition
+          - A spiky POV is almost impossible to imitate because it's unique to each person
+          - SPOVs should teach your audience something relevant they don't already know
+          - Spiky points aren't controversial for the sake of it - avoid being a contrarian who just stirs the pot
+          - SPOVs are rooted in evidence but are not proven facts or universal truths
+          - You need to be okay with people disagreeing - 100% consensus will never come
+          - SPOVs require advocacy and a bias toward action, not passive regurgitation of information
+          - You'll know you have a great spiky POV when your audience's eyes light up (Wes calls this "ELU" - Eyes Lighting Up)
+          - Example SPOVs from Wes: "Launches aren't a one-time event", "Stop learning how to give feedback, focus on receiving it", "There's a trade-off between brand and performance marketing"
+        - **==Insights==**
+          - SPOVs create memorability through productive disagreement - they make people stop and reconsider their assumptions
+          - The fear of being wrong or disagreed with prevents most people from developing SPOVs, creating opportunity for those brave enough to take positions
+          - SPOVs work as a filtering mechanism - they attract the right people and repel the wrong ones for your message
+        - Link: [https://www.weskao.com/blog/spiky-point-of-view-lets-get-a-little-controversial](https://www.weskao.com/blog/spiky-point-of-view-lets-get-a-little-controversial)
+      - **"Rigorous thinking: No lazy thinking" - Wes Kao (2023)**
+        - **==DOK2 Summary==**
+          - Rigorous thinking is where flimsy ideas go to die - it's an organisational force multiplier that allows teams to produce higher quality work faster, even with limited resources. It requires writing down ideas to expose weak logic, creating cultures where questions flow in all directions (not just upward), and managers engaging in deep conversations about decisions and challenges rather than just status updates. Teams that think rigorously challenge assumptions, ask "what else could be true," and aren't precious about their ideas, leading to stronger strategies and better execution.
+        - **==DOK1 Facts==**
+          - Writing clearly is thinking clearly - managers often ask team members to write down ideas to expose weak logic
+          - Questions should flow in both directions in an organization, not only upward to leadership
+          - No one's ideas should be precious or off-limits from questioning
+          - Rigorous thinking requires hands-on, on-the-job learning through conversation, not just reading books
+          - Junior team members often give the right answer when given a chance to think rigorously
+          - Status updates and project management discussions are insufficient - deeper conversations about decisions and challenges are needed
+          - Companies that encourage all employees to add comments and challenge assumptions in strategy docs see improved strategies and increased buy-in
+          - The "pinch of salt" in cooking is an example of where judgment is needed - similar to many business decisions
+          - Rigorous thinkers ask "what else could be true?" when analyzing situations
+          - Teams default to curiosity when facing roadblocks or areas of doubt
+        - **==Insights==**
+          - Rigorous thinking democratizes intelligence in organizations - it's not about being smarter but about applying consistent thinking processes
+          - The act of writing forces clarity that verbal communication often lacks, making it a powerful tool for exposing weak thinking
+          - Creating psychological safety for questioning ideas at all levels strengthens organizational decision-making
+        - Link: [https://newsletter.weskao.com/p/rigorous-thinking](https://newsletter.weskao.com/p/rigorous-thinking)
+      - **"Neuroscientist Says We All Need to Rethink How We Set Goals" - Anne-Laure Le Cunff (2025)**
+        - **==DOK2 Summary==**
+          - Instead of rigid linear goal-setting, we should adopt an experimental mindset that defaults to curiosity when facing challenges. This approach, called "mindful productivity," balances ambition with mental health by creating growth loops rather than fixed endpoints. Leaders should optimise for curiosity by creating environments where it's safe to experiment and learn in public, with people sharing their learning process including missteps and uncertainties. The brain's efficiency drive can lead us to optimise for productivity at the expense of exploration, so we need to intentionally create space for curiosity through practices like weekly "curiosity hours" dedicated to exploring questions with no obvious practical application.
+        - **==DOK1 Facts==**
+          - The main insight from neuroscience for productivity is to always default to curiosity when facing challenges
+          - Mindful productivity means being ambitious without sacrificing mental health
+          - Growth loops are more effective than linear models of success - goals should be discovered, pursued, and adapted in conversation with the world
+          - The brain is wired for efficiency, which can lead to optimizing for productivity at the expense of curiosity
+          - A "curiosity hour" is a weekly appointment to explore questions that fascinate you, even without practical application
+          - Leaders need to optimize for curiosity by creating environments where it's safe to experiment
+          - When teams see leaders openly sharing their learning process, including missteps, it creates psychological safety
+          - Hiring curious people isn't enough - you need to create an environment that encourages curiosity
+          - The exploration-exploitation dilemma describes the brain's tendency to exploit known patterns rather than explore new ones
+          - Curiosity has a compounding effect - the more we learn and explore, the better we become at spotting patterns and connections
+        - **==Insights==**
+          - The experimental mindset transforms documentation from a static deliverable into a living exploration of understanding
+          - Psychological safety and visible learning-in-public by leaders creates the conditions for genuine knowledge creation
+          - Intentional inefficiency (like curiosity hours) is necessary to counteract our brain's natural drive toward optimization
+        - Link: [https://www.microsoft.com/en-us/worklab/podcast/neuroscientist-anne-laure-le-cunff-says-we-all-need-to-rethink-how-we-set-goals](https://www.microsoft.com/en-us/worklab/podcast/neuroscientist-anne-laure-le-cunff-says-we-all-need-to-rethink-how-we-set-goals)
+  - **==Structuring Documentation for Learning==**
+    - **==Section Summary==**
+      - Effective documentation structure emerges from understanding that users have different needs at different moments (Diátaxis's four types), organising information by actionability rather than topic (CODE's PARA method), and revealing complexity progressively rather than all at once (Progressive Disclosure). The synthesis reveals a core principle: structure should match the user's journey from novice to expert, with each stage offering exactly what's needed - no more, no less. This means separating learning from doing, doing from understanding, and letting users choose their depth rather than drowning them in options.
+    - **==Sources==**
+      - **"Diátaxis Framework" - Daniele Procida (2020)**
+        - **==DOK2 Summary==**
+          - Diátaxis identifies four distinct documentation types based on user needs: tutorials (learning-oriented lessons), how-to guides (task-oriented recipes), reference (information-oriented descriptions), and explanation (understanding-oriented discussion). Each type requires different writing approaches and must be kept separate to avoid confusion. The framework emerges from recognising that users need different documentation at different times - beginners need safe learning experiences (tutorials), practitioners need problem-solving guidance (how-tos), workers need accurate facts (reference), and students need conceptual understanding (explanation). Mixing these types creates documentation that fails at all purposes.
+        - **==DOK1 Facts==**
+          - Documentation has four fundamental types: tutorials, how-to guides, reference, and explanation
+          - Each type corresponds to different user needs at different times in their interaction cycle
+          - Tutorials are lessons that take learners by the hand through a learning experience with guaranteed safety and success
+          - How-to guides address real-world goals by providing practical directions for already-competent users
+          - Reference guides contain technical descriptions - facts users need to do things correctly
+          - Explanation provides context, background, and the "why" behind concepts
+          - The framework is proven in practice across hundreds of documentation projects
+          - Crossing or blurring boundaries between types is at the heart of vast numbers of documentation problems
+          - Tutorials belong to the realm of learning/study; how-to guides belong to the realm of work/tasks
+          - Reference should reflect the structure of the thing it describes, like a map reflects geography
+          - The Diátaxis "compass" helps clarify intentions when creating documentation
+        - **==Insights==**
+          - Documentation fails when it tries to serve multiple purposes simultaneously - clarity comes from separation
+          - The framework reveals that most documentation problems stem from type confusion rather than poor writing
+          - User needs, not content types, should drive documentation structure
+        - Link: [https://diataxis.fr/](https://diataxis.fr/)
+      - **"Building a Second Brain: CODE Method" - Tiago Forte (2022)**
+        - **==DOK2 Summary==**
+          - CODE (Capture, Organise, Distill, Express) is a four-step method for turning information into creative output and concrete results. Capture only what resonates (10% of original content), Organise by actionability using PARA (Projects, Areas, Resources, Archives), Distill notes opportunistically through Progressive Summarisation creating layers like a zoomable map, and Express by creating tangible results in the real world. The system treats notes as time travel - sending packets of knowledge to your future self - and emphasises designing notes with your future self in mind, who will be busy and impatient. The goal is building a "Second Brain" that gives you confidence to tackle ambitious projects by having supporting material ready.
+        - **==DOK1 Facts==**
+          - CODE stands for Capture, Organise, Distill, and Express
+          - Capture only ideas that resonate - unusual, counterintuitive, or interesting things that refute what you know
+          - Keep no more than 10% of original source content
+          - PARA organizing principle: Projects (short-term efforts), Areas (ongoing responsibilities), Resources (future reference), Archives (inactive items)
+          - Progressive Summarization creates layers: excerpts → summary of excerpts → summary of summary
+          - Each layer allows different reading depths - full detail or just main takeaway
+          - Treat notetaking as time travel - sending packets of knowledge to your future self
+          - Design notes for a busy, impatient future version of yourself
+          - Distill notes opportunistically over time, not all upfront
+          - The most frequently used notes surface organically like ski slopes with deeper grooves
+          - Express stage means creating tangible results in the real world
+          - With substantial reserves in your Second Brain, you never face an empty page
+        - **==Insights==**
+          - Information becomes useful only when organised by actionability rather than by topic or type
+          - The most valuable notes emerge through use, not through upfront categorisation
+          - Documentation should be designed for the reader's future busy self, not their current patient self
+        - Link: [https://fortelabs.com/blog/basboverview/](https://fortelabs.com/blog/basboverview/)
+      - **"Applying Progressive Information Disclosure to Online Help Navigation" - Tom Johnson (2012)**
+        - **==DOK2 Summary==**
+          - Progressive disclosure layers information so users aren't presented with everything at once, making some information available only at secondary or tertiary levels of navigation. Unlike traditional web help systems that follow an "aggressive information expansion model" with hundreds of visible topics, progressive disclosure starts with minimal options and reveals complexity only when users choose to see it. The principle comes from recognising that showing all topics at once causes users' eyes to glaze over and their first reaction to be closing the help file. Like a print dialog that shows basic options first with an "Advanced" button for specialists, documentation should defer advanced or rarely-used information to secondary screens.
+        - **==DOK1 Facts==**
+          - Traditional webhelp systems present all topics expanded, creating information overload
+          - When users see hundreds of topics at once, their eyes glaze over and they close the help
+          - Progressive disclosure defers advanced features to secondary screens
+          - The classic example is print dialogs showing basic options with "Show Details" for advanced settings
+          - Most applications violate progressive disclosure by loading TOCs with all possible information
+          - Users can only choose what they want when they understand the scope of choices
+          - Information appearing on initial display signals its importance to users
+          - Designs going beyond 2 disclosure levels typically have low usability - users get lost
+          - Progressive disclosure's goal is expediting use of the initial display
+          - Staged disclosure (like wizards) is linear, while progressive disclosure allows random access
+          - Analytics should be supplemented with usability testing to see if pages get hits because users want them or enter by mistake
+        - **==Insights==**
+          - Documentation structure should fight against the natural tendency to show everything at once
+          - The fear of users not finding information leads to overexposure that ensures they find nothing
+          - Complexity should be earned through user choice, not imposed by default
+        - Link: [https://idratherbewriting.com/2012/08/09/applying-progressive-information-disclosure-to-online-help-navigation/](https://idratherbewriting.com/2012/08/09/applying-progressive-information-disclosure-to-online-help-navigation/)
+  - **==The Cognitive Science of Documentation==**
+    - **==Section Summary==**
+      - Documentation effectiveness is constrained by working memory's 3-7 item limit, which explains why the 2500-token BrainLift constraint works. Cognitive Load Theory shows we must minimise extraneous load (poor design) while maximising germane load (schema building), but what helps novices can hurt experts (expertise reversal effect). The neuroscience adds that sustainable documentation requires balancing ambition with mental health, leveraging both focused and diffused thinking modes, and accepting that cringing at past work signals growth, not failure. Together, these findings mandate that documentation respect cognitive limits while building toward expertise.
+    - **==Sources==**
+      - **"Cognitive Load Theory: A teacher's guide" - Structural Learning (2022)**
+        - **==DOK2 Summary==**
+          - Cognitive Load Theory recognises that working memory has severe limitations when processing new information, typically handling only 3-7 pieces at once. There are three types of load: intrinsic (inherent complexity of the material), extraneous (from poor instructional design), and germane (desirable effort that builds schemas). Effective instruction minimises extraneous load and maximises germane load, ensuring learners focus on processing and integrating new information. The expertise reversal effect shows that strategies beneficial for novices become detrimental for experts. Learning occurs when information moves from limited working memory to unlimited long-term memory, forming schemas that allow us to treat multiple elements as single units.
+        - **==DOK1 Facts==**
+          - Working memory can only handle 3-7 pieces of information simultaneously
+          - Three types of cognitive load: intrinsic (content complexity), extraneous (poor design), germane (schema building)
+          - Intrinsic load cannot be changed by design but can be managed through sequencing
+          - Extraneous load comes from poorly designed instructional methods and should be minimized
+          - Germane load is the desirable mental effort that forms meaningful connections in long-term memory
+          - When familiar information comes from long-term memory, working memory has no known limits
+          - Schemas allow us to treat multiple elements as one, reducing cognitive load
+          - The expertise reversal effect occurs when novice-helpful strategies hurt expert performance
+          - Learning means changing long-term memory structures, not just processing in working memory
+          - CLT is based on hundreds of randomized controlled trials across many domains
+          - Information should be presented simple-to-complex or in part-whole sequences
+        - **==Insights==**
+          - The 2500-token limit in BrainLifts directly reflects working memory constraints
+          - Documentation must be designed differently for novices versus experts or it helps neither
+          - True learning requires schema formation in long-term memory, not just information exposure
+        - Link: [https://www.structural-learning.com/post/cognitive-load-theory-a-teachers-guide](https://www.structural-learning.com/post/cognitive-load-theory-a-teachers-guide)
+      - **"Cognitive load theory, educational research, and instructional design: some food for thought" - de Jong (2009) discussing Sweller's work**
+        - **==DOK2 Summary==**
+          - Cognitive load theory emerged from recognising that working memory is the bottleneck for learning, with its limitations disappearing only when dealing with automated schemas from long-term memory. Element interactivity is the key concept - when multiple elements must be processed simultaneously to understand something, cognitive load is high. Expertise transforms working memory capacity because experts have schemas that chunk multiple elements into single units. The theory has generated numerous instructional effects proven through controlled experiments: worked examples reduce load compared to problem-solving, split-attention between text and diagrams increases load, and redundant information impairs learning. However, the theory's three-way distinction between load types has conceptual problems - what counts as germane versus extraneous depends on the learner's expertise level.
+        - **==DOK1 Facts==**
+          - Element interactivity determines intrinsic cognitive load - how many elements must be processed simultaneously
+          - Experts have schemas that treat multiple interacting elements as single units
+          - Working memory limitations vanish when processing familiar information from long-term memory
+          - The worked example effect shows learners learn better from examples than solving problems
+          - Split-attention effect occurs when learners must mentally integrate separated text and diagrams
+          - Redundancy effect shows that repeating information in multiple formats impairs learning
+          - Cognitive load effects only matter for high element interactivity material
+          - What counts as germane load for a novice may be extraneous for an expert
+          - The distinction between intrinsic and extraneous load depends on expertise level
+          - CLT's recommendations (match prior knowledge, avoid confusion, stimulate deep knowledge) aren't new to instructional design
+          - Each cognitive load effect is based on multiple replicated randomized controlled trials
+        - **==Insights==**
+          - Documentation that forces users to integrate information from multiple sources creates unnecessary cognitive load
+          - The power of examples over explanations reflects how our cognitive architecture actually works
+          - The boundaries between "good" and "bad" cognitive load shift with expertise, complicating documentation design
+        - Link: [https://link.springer.com/article/10.1007/s11251-009-9110-0](https://link.springer.com/article/10.1007/s11251-009-9110-0)
+      - **"From burnout to mindful productivity and quickly building an audience" - Anne-Laure Le Cunff (2020)**
+        - **==DOK2 Summary==**
+          - Mindful productivity emerges from the tension between being ambitious and maintaining mental health, focusing on sustainable creation rather than optimisation. The neuroscience reveals key principles: focused and diffused thinking modes serve different purposes (the diffused mode during rest enables creative connections), there's no such thing as learning styles (a persistent neuro-myth), and our brains don't actually multitask but rapidly switch contexts at great cognitive cost. Writing publicly forces clearer thinking because having readers makes you articulate ideas more precisely. The Feynman Technique - explaining concepts simply as if teaching someone else - reveals understanding gaps. Most importantly, looking back at past work and cringing indicates growth; if you don't cringe, you haven't grown enough.
+        - **==DOK1 Facts==**
+          - Mindful productivity balances ambition with mental health sustainability
+          - The brain has two modes: focused (direct problem-solving) and diffused (making unexpected connections)
+          - Sleep consolidates learning by strengthening neural pathways formed during the day
+          - "Learning styles" (visual, auditory, kinesthetic) are a neuromyth with no scientific basis
+          - The brain cannot multitask - it switches between tasks with high cognitive cost
+          - Procrastination often stems from fear or uncertainty, not laziness
+          - The Feynman Technique: explain something simply to identify knowledge gaps
+          - Writing for an audience forces clearer thinking than private notes
+          - Looking back and cringing at old work is a sign of growth
+          - Chunking information helps manage working memory limitations
+          - Process focus beats product focus for reducing anxiety and improving performance
+          - Only 10% of our brain being used is a complete myth - we use our entire brain
+        - **==Insights==**
+          - Public documentation creates accountability that private documentation lacks, forcing higher quality thinking
+          - The discomfort of seeing our past work is actually a positive signal of intellectual growth
+          - Sustainable documentation practices require accepting imperfection as part of the learning process
+        - Link: [https://podcast.creatorscience.com/anne-laure-le-cunff/](https://podcast.creatorscience.com/anne-laure-le-cunff/)
+  - **==Real-World Implementation==**
+    - **==Section Summary==**
+      - Real-world implementation reveals that successful documentation requires discipline to maintain type separation (Sequin used AI to enforce Diátaxis boundaries), acceptance of incompleteness (Tom's 900-page course where finishing isn't expected), and systematic distillation through layers (Progressive Summarisation's 5% reaching final form). The pattern: frameworks succeed when they embrace that most content remains dormant, readers take only what they need, and value concentrates in small portions that emerge through actual use rather than upfront planning.
+    - **==Sources==**
+      - **"We fixed our documentation with the Diátaxis framework" - Sequin (2025)**
+        - **==DOK2 Summary==**
+          - Sequin transformed their chaotic documentation by applying Diátaxis, moving from mixed-purpose pages to clearly separated tutorials, how-tos, reference, and explanation. The key insight was that readers approach documentation differently based on their needs: following tutorials line-by-line without thinking, using how-tos to solve specific problems they understand, consulting reference while working, and reading explanation to gain deeper understanding. They used Claude to maintain discipline, catching them when they mixed reference material into how-tos. The process revealed that their original "quickstart" was failing because it started with database connection (reference) instead of hands-on learning. After restructuring, documentation became navigable and purposeful, with each section serving its intended audience moment.
+        - **==DOK1 Facts==**
+          - Sequin is a change data capture tool for Postgres that streams inserts/updates/deletes to Kafka and SQS
+          - Original documentation mixed purposes within single pages, confusing readers
+          - Readers don't read documentation linearly - they jump based on immediate needs
+          - Tutorials should require no thinking or decision-making from readers
+          - How-tos assume readers understand their problem and need guidance on solutions
+          - Reference is consulted while working, not read cover-to-cover
+          - Explanation provides the "why" for users invested enough to seek deep understanding
+          - Used Claude AI to enforce separation between documentation types
+          - Original quickstart failed by starting with database connection instead of immediate success
+          - Engineers constantly fight the temptation to explain everything at every turn
+          - Investment from readers ramps up from tutorial to how-to to reference to explanation
+          - After restructuring, sidebar organization made documentation purpose immediately clear
+        - **==Insights==**
+          - Documentation fails when it assumes readers want to understand everything rather than accomplish something
+          - AI tools can serve as discipline enforcers, catching human tendency to mix documentation types
+          - The first experience must be successful action, not configuration or setup
+        - Link: [https://blog.sequinstream.com/we-fixed-our-documentation-with-the-diataxis-framework/](https://blog.sequinstream.com/we-fixed-our-documentation-with-the-diataxis-framework/)
+      - **"Documenting APIs: A guide for technical writers and engineers" - Tom Johnson (2024)**
+        - **==DOK2 Summary==**
+          - This comprehensive 900-page course teaches API documentation through hands-on practice, starting with a simple weather API to build understanding before tackling complex concepts. The course emphasises that code documentation is challenging because of its non-linear nature - you don't document code top-to-bottom but must focus on the "why" over the "how." Different users have varying technical proficiency that doesn't transfer between languages or domains. The course has helped hundreds transition into API documentation by providing exercises throughout each section. Success requires actually doing the activities, especially working with real open-source projects. Most people never finish the entire course because it keeps growing, but they should focus only on sections they need to learn.
+        - **==DOK1 Facts==**
+          - The course contains 900+ pages of content when printed to PDF
+          - It's structured as a course not a book because of extensive exercises throughout
+          - Starts with a simple weather API to contextualize learning
+          - Code documentation is non-linear - you don't describe chunks top to bottom
+          - Focus on "why" instead of "how" when documenting code
+          - User proficiency in one language doesn't carry over to another
+          - Build complexity in stages, starting simple and expanding to advanced use cases
+          - Interactive browser experiences where users adjust input and see output help developers learn
+          - Most people don't finish the course completely, which is expected and fine
+          - Content keeps growing and changing as Tom gains experience
+          - You need to set up test environments and get API keys to properly test documentation
+          - Testing means walking through instructions personally and verifying responses
+        - **==Insights==**
+          - Massive comprehensive documentation (900 pages) works when it's non-linear and exercise-driven
+          - The incompleteness of learning is a feature not a bug - people take what they need
+          - Documentation you can't test isn't documentation, it's speculation
+        - Link: [https://idratherbewriting.com/learnapidoc/](https://idratherbewriting.com/learnapidoc/)
+      - **"Progressive Summarization: A Practical Technique for Designing Discoverable Notes" - Tiago Forte (2017)**
+        - **==DOK2 Summary==**
+          - Progressive Summarisation creates discoverable notes through layers of distillation: Layer 1 captures interesting content (no explicit criteria), Layer 2 bolds the best parts, Layer 3 highlights the best of the bolded, Layer 4 adds an executive summary, and Layer 5 remixes into something new. Each layer acts like zoom levels on a map - you can scan quickly at high altitude or dive deep when needed. The technique turns notes from a dense jungle into an archipelago of islands, revealing your personal information landscape. Only 5% of sources reach the executive summary layer; most notes earn their keep by waiting months or years to become relevant. The goal isn't to remember everything but to forget as much as possible, offloading thinking to create room for imagination and creativity.
+        - **==DOK1 Facts==**
+          - Progressive Summarisation works in layers: capture → bold → highlight → summarise → remix
+          - Layer 1 captures anything that feels insightful, interesting, or useful with no explicit criteria
+          - Layer 2 bolds keywords, phrases, and sentences representing the core essence
+          - Layer 3 highlights the best of the bolded passages using different formatting
+          - Layer 4 adds executive summary at the top for a tiny minority of sources
+          - Layer 5 remixes into blog posts, sketches, videos - wrestling deeply with information
+          - Only 50% of consumed sources get saved at all
+          - 25% make it to bolding, 20% to highlighting, only 5% to executive summary
+          - Notes with more layers correspond to how integral they are to your work
+          - Can scan Layer 3 highlights 6-12 times faster than full notes
+          - Summarization must be done manually and individually - can't be outsourced
+          - The technique minimizes cognitive burden at all stages: consumption, review, retrieval
+          - Value of information is not evenly distributed - concentrated in particular places
+        - **==Insights==**
+          - Documentation layers should correspond to actual use patterns - most content stays dormant until needed
+          - The fear of losing information prevents effective distillation - safety nets (preserved layers) enable bold reduction
+          - Forgetting is a feature not a bug - offloading enables creativity rather than recall
+        - Link: [https://fortelabs.com/blog/progressive-summarization-a-practical-technique-for-designing-discoverable-notes/](https://fortelabs.com/blog/progressive-summarization-a-practical-technique-for-designing-discoverable-notes/)

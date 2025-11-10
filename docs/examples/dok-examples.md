@@ -1,0 +1,4 @@
+Real DOK1 Example:
+Durable Objects as Stateful Computers: Each Durable Object acts as an Erlang-style actor implemented at the infrastructure layer, maintaining state and continuing execution even after browser tabs close, with the ability to handle plain functions, HTTP requests, and WebSocket connections (including multiple concurrent WebSocket connections to a single DO).
+Real DOK2 Example:
+Durable Objects Solve the Stateful Agent Problem: The traditional approach of spinning up expensive VMs for each agent is slow, costly, and hard to maintain - Durable Objects provide a superior primitive by combining persistent state, global distribution, automatic scaling, and zero cold starts into a single abstraction that naturally maps to how AI agents need to operate (long-running, stateful, globally accessible).
