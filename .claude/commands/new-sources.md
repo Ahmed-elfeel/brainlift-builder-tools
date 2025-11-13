@@ -1,6 +1,4 @@
-# New Sources
-
-You are tasked with finding and adding new sources to an existing BrainLift document. You will research sources based on a user-provided key question, present them for review, allow the user to select which sources to add, suggest appropriate placement in the Knowledge Tree, and insert them with proper placeholder formatting.
+You are helping the user add new research sources to an existing BrainLift Knowledge Tree.
 
 ## Usage
 
@@ -8,554 +6,381 @@ You are tasked with finding and adding new sources to an existing BrainLift docu
 /new-sources
 ```
 
-This command has no parameters. It will guide you through an interactive process to add sources to your BrainLift.
+**Examples:**
+- `/new-sources` - Interactive command that guides you through finding and adding new research sources to your BrainLift
+
+## Purpose
+
+This command helps you systematically add new research sources to your existing BrainLift. It finds diverse sources addressing a key question you want to explore, lets you select which sources to add, suggests appropriate placement in your Knowledge Tree, and ensures WorkFlowy compatibility.
 
 ## Process
 
-When this command is invoked, follow these steps:
+### Step 1: Find and Select BrainLift File
 
-### Step 1: BrainLift File Selection
-
-1. **Check brainlift/ folder** for markdown files:
-   - Use: `ls brainlift/*.md`
-
-2. **Auto-select or prompt**:
-   - **If exactly 1 file**: Auto-select and proceed with that file
-   - **If multiple files**: Show numbered list and ask user to select
-   - **If no files**: Show error message
-
-**Example prompt for multiple files**:
-```
-I found multiple BrainLift files in your brainlift/ folder:
-
-1. ai-agents-brainlift.md
-2. document-review-brainlift.md
-3. knowledge-management-brainlift.md
-
-Which BrainLift would you like to add sources to? (Enter number)
+1.1. Use the `Bash` tool to find all `.md` files in the `brainlift/` folder:
+```bash
+find brainlift -name "*-brainlift.md" -type f
 ```
 
-**If no files exist**:
+1.2. If multiple BrainLift files are found:
+   - Present a numbered list of available BrainLift files
+   - Ask the user: "Which BrainLift would you like to add sources to?"
+   - Wait for user selection
+
+1.3. If only one BrainLift file is found:
+   - Proceed with that file
+   - Inform user: "Working with: [filename]"
+
+1.4. If no BrainLift files are found:
+   - Inform user: "No BrainLift files found in brainlift/ folder. Please create a BrainLift first using /new_brainlift"
+   - Stop execution
+
+### Step 2: Read BrainLift Structure
+
+2.1. Use the `Read` tool to load the selected BrainLift file completely
+
+2.2. Extract and store the **Purpose** section:
+   - This provides context for source research
+   - Specifically extract the "In Scope:" statement
+
+2.3. Parse the **==DOK2 - Knowledge Tree==** section to identify existing categories:
+   - Find all category headers (format: `**==[Category Name]==**`)
+   - Store category names and their location in the file
+   - This will help suggest placement for new sources
+
+2.4. Note the structure for later insertion
+
+### Step 3: Ask for Key Question
+
+3.1. Present the BrainLift's purpose to the user:
 ```
-I didn't find any BrainLift files in the brainlift/ folder.
+Your BrainLift's Purpose:
+**In Scope:** [Purpose statement from Step 2.2]
 
-Would you like to create a new BrainLift first? Run /new-brainlift to get started.
+What key question do you want to answer with these new sources?
 ```
 
-### Step 2: Key Question Prompt
+3.2. Wait for user to provide their key question
 
-Ask the user for the key question these sources should answer:
+3.3. Store the key question for use in research queries
 
+### Step 4: Research and Find Sources
+
+4.1. Use the `WebSearch` tool to find 3-5 recent sources that take different positions on the user's key question
+
+**Search Strategies:**
+- Search for "[key question]"
+- Search for "[topic] 2025" or "[topic] 2024" to find recent content
+- Look for articles from different sources (academic publications, industry blogs, reports, news outlets)
+- Prioritize sources with specific viewpoints or opinions
+- Aim for diversity in perspective and publication type
+
+4.2. For each source found, collect:
+- **Title**: Full article/report title
+- **Author/Organization**: Who wrote it or which organization published it
+- **Publication**: Where it was published (journal, blog, company site, etc.)
+- **Year**: Publication year (prefer 2024-2025)
+- **URL**: Direct link to the source
+- **Perspective**: 1-2 sentence description of the position it takes on the key question
+
+4.3. Aim to find 3-5 sources total
+
+### Step 5: Present Findings to User
+
+5.1. Present your research findings in a clear, numbered format:
 ```
-What key question do you want these new sources to answer?
+I've found [N] sources addressing your key question: "[key question]"
 
-Example: "How should enterprises architect agent orchestration to balance autonomy with coordination?"
-
-This will guide the source research to find articles with relevant perspectives.
-```
-
-Wait for user response and store the key question.
-
-### Step 3: Source Quantity Prompt
-
-Ask how many sources to find:
-
-```
-How many sources would you like me to find? (Enter a number from 1 to 5)
-
-Recommendation: 3 sources provides good diversity without being overwhelming.
-```
-
-**Validation**:
-- Accept numbers 1-5
-- If invalid input, default to 3 and inform user: "I'll search for 3 sources."
-
-### Step 4: Research Sources
-
-Use WebSearch to find the requested number of sources. Search strategically:
-
-**Search Strategies**:
-1. Search for the exact key question: "[key question]"
-2. Search for recent content: "[key question] 2024" or "[key question] 2025"
-3. Look for diverse viewpoints and perspectives
-4. Prioritize:
-   - Articles with specific viewpoints or opinions
-   - Different sources (academic, industry, blog posts, research papers)
-   - Recent content (2024-2025 preferred)
-   - Actual URLs that are accessible
-
-**For Each Source Found, Gather**:
-- **Title**: Full article title
-- **Author/Organization**: Who wrote it
-- **Publication**: Where it was published
-- **Year**: Publication year
-- **URL**: Direct link
-- **Perspective**: Brief 1-2 sentence description of the stance or viewpoint
-
-### Step 5: Present Sources for Review
-
-Present your findings:
-
-```
-I've found [N] sources addressing "[key question]":
-
-1. **[Article Title] - [Author] / [Publication] ([Year])**
-   - Perspective: [Brief description of the source's stance or main argument]
+1. **[Article Title] - [Author/Organization] / [Publication] ([Year])**
+   - Perspective: [Brief description of stance]
    - Link: [URL]
 
-2. **[Article Title] - [Author] / [Publication] ([Year])**
-   - Perspective: [Description]
+2. **[Article Title] - [Author/Organization] / [Publication] ([Year])**
+   - Perspective: [Brief description of stance]
    - Link: [URL]
 
-3. **[Article Title] - [Author] / [Publication] ([Year])**
-   - Perspective: [Description]
+3. **[Article Title] - [Author/Organization] / [Publication] ([Year])**
+   - Perspective: [Brief description of stance]
    - Link: [URL]
 
-[Continue for all requested sources...]
+[Continue for all sources found]
 
-Do these sources provide good perspectives on your key question?
+Do these sources provide diverse viewpoints on your key question?
+(Enter: yes / refine / cancel)
 ```
 
-### Step 6: Approval and Iteration
+5.2. Wait for user response:
+   - If "yes": Proceed to Step 6
+   - If "refine": Ask "What's missing or what would you like me to adjust?" → Return to Step 4 with refined search
+   - If "cancel": Exit gracefully with message "Source research cancelled"
 
-Wait for user response:
+### Step 6: User Selection of Sources
 
-**If user approves**: Proceed to Step 7
-
-**If user wants changes**: Ask what to adjust:
+6.1. Ask the user which sources they want to add:
 ```
-What would you like me to adjust?
-- Different perspectives or viewpoints?
-- More recent sources?
-- Different publication types (academic vs. industry)?
-- Different key aspects to explore?
-```
+Which sources would you like to add to your BrainLift?
 
-Then search again with adjusted criteria and re-present sources.
+Options:
+- Enter numbers (e.g., "1,3,5" or "1, 3, 5" or "1 3 5")
+- Type "all" to add all sources
+- Type "none" to cancel
 
-### Step 7: Source Selection (Iterative Loop)
-
-Present the numbered list of available sources:
-
-```
-Which source would you like to add to your BrainLift?
-
-Available sources:
-1. [Source 1 Title - Author]
-2. [Source 2 Title - Author]
-3. [Source 3 Title - Author]
-
-Enter the number of the source to add, or type 'done' if you're finished:
+Your choice:
 ```
 
-**User selects a source by number**
+6.2. Wait for user input
 
-### Step 8: Parse Knowledge Tree Structure
+6.3. Parse the user's selection:
+   - If "all": Select all sources
+   - If "none": Exit gracefully
+   - If numbers: Parse the numbers and select corresponding sources
+   - Validate that numbers are within range
 
-1. **Read the selected BrainLift file** completely
+6.4. Store the selected sources for insertion
 
-2. **Parse the Knowledge Tree**:
-   - Identify all existing categories (sections with `**==[Category Name]==**`)
-   - Extract category names and count sources in each
-   - Understand themes/topics of each category based on:
-     - Category name
-     - Existing source titles in that category
-     - Section summary content (if not placeholder)
+### Step 7: Suggest Placement in Knowledge Tree
 
-3. **Analyze selected source**:
-   - Extract key themes/topics from the source title
-   - Identify which existing category best matches
-   - Determine if a new category would be more appropriate
+7.1. Analyze existing categories in the DOK2 - Knowledge Tree (from Step 2.3)
 
-### Step 9: Suggest Category Placement
+7.2. Based on the key question and selected sources, suggest the most appropriate placement:
+   - If sources align with an existing category: Suggest that category
+   - If sources represent a new theme: Suggest a new category name
 
-Present placement options with a smart recommendation:
-
+7.3. Present suggestion to user:
 ```
-Where would you like to add: [Source Title - Author]
+I suggest adding these sources to the following category:
 
-EXISTING CATEGORIES:
-1. **[Category Name 1]** - [Brief theme description] ([X] sources)
-2. **[Category Name 2]** - [Brief theme description] ([Y] sources)
-3. **[Category Name 3]** - [Brief theme description] ([Z] sources)
+**Existing category:** **==[Category Name]==**
 
-NEW CATEGORY:
-[N]. Create new category (you'll specify the name)
-
-RECOMMENDED: Option [#] - [Reason why this category fits best based on source theme]
-
-Enter number to select placement:
+Do you agree with this placement? (yes / specify-different)
 ```
 
-**Recommendation Logic**:
-- Match source theme/keywords to existing category themes
-- Consider category balance (don't overfill one category)
-- Recommend new category if no good thematic fit
-- Explain reasoning clearly
-
-**Example**:
+OR if suggesting new category:
 ```
-RECOMMENDED: Option 2 - This source discusses orchestration patterns, which aligns with the "Agent Coordination" theme in this category (currently 4 sources).
+I suggest creating a new category for these sources:
+
+**New category:** **==[Suggested Category Name]==**
+
+Do you agree with this category name? (yes / specify-different)
 ```
 
-### Step 10: Handle Placement Selection
+7.4. Wait for user response:
+   - If "yes": Use suggested placement/category name
+   - If "specify-different": Ask "What category name would you like to use?" → Wait for response → Store new category name
 
-**If user selects existing category**:
-1. Proceed to Step 11 to format and insert source
+7.5. Store the final category name and determine if it's new or existing
 
-**If user selects "Create new category"**:
-1. Ask for category name:
+### Step 8: Format Source Structures
+
+8.1. For each selected source, format according to brainlift-methodology.md:
+
+**Source Format:**
 ```
-What would you like to name this new category?
-
-Example category names:
-- "AI Agent Economics"
-- "Multi-Agent Communication Protocols"
-- "Agent Safety and Reliability"
-
-Category name:
-```
-
-2. Wait for user input
-3. Proceed to Step 11 to format and insert source in new category
-
-### Step 11: Format Source Entry
-
-Create the source entry with proper placeholders following brainlift-methodology.md:
-
-```markdown
 - **[Source Title] - [Author/Organization] / [Publication] ([Year])**
   - **==DOK2 Summary==**
-    - [Placeholder: Write 4-5 sentences (80-150 words total) synthesizing the main argument, evidence, and implications from this source]
+    - [PLACEHOLDER: Extract 4-5 sentence summary (80-150 words) using /extract-dok1-dok2]
   - **==DOK1 Facts==**
-    - [Placeholder: Extract atomic knowledge units from the source. Each fact should be 15-25 words, max 35. Use simple bullet points, no numbering, no titles. Prefer 1 sentence per fact, up to 3 for complex concepts]
+    - [PLACEHOLDER: Extract key facts as simple bullets using /extract-dok1-dok2]
   - Link: [URL]
 ```
 
-**Critical Formatting Rules**:
-- DOK2 Summary header: Exactly `**==DOK2 Summary==**` (no numbering)
-- DOK1 Facts header: Exactly `**==DOK1 Facts==**` (no numbering)
-- DOK2 appears BEFORE DOK1 Facts
-- Link line at the very end
-- Use placeholder text that explains what user should add
+**Indentation Rules:**
+- Source title: 2 spaces (one level under category or sub-section)
+- DOK2/DOK1 headers: 4 spaces (two levels)
+- DOK2/DOK1 content: 6 spaces (three levels)
+- Link: 4 spaces (two levels)
 
-### Step 12: Insert Source into BrainLift File
+8.2. If adding to existing category with existing **==Sources==** section:
+   - Sources will be inserted under the **==Sources==** header
+   - Maintain same indentation as existing sources
 
-**For Existing Category**:
-1. Locate the category section in the file
-2. Insert new source entry after existing sources (before next category or end of section)
-3. **Check Section Summary**:
-   - If Section Summary contains placeholder text like `[Placeholder:` or `[Update after...`, replace it with:
-     ```markdown
-     [Update Section Summary after completing sources in this category - synthesize themes across all sources]
-     ```
-   - If Section Summary has actual content, leave it unchanged
+8.3. If adding to existing category without **==Sources==** section:
+   - Will need to add **==Sources==** header first
+   - Then add source entries
 
-**For New Category**:
-1. Determine where to insert (typically at end of Knowledge Tree)
-2. Create complete category structure:
-```markdown
-- **==[New Category Name]==**
-  - **==Section Summary==**
-    - [Update Section Summary after completing sources in this category - synthesize themes across all sources]
-  - **[Source Title] - [Author/Organization] / [Publication] ([Year])**
-    - **==DOK2 Summary==**
-      - [Placeholder text]
-    - **==DOK1 Facts==**
-      - [Placeholder text]
-    - Link: [URL]
-```
-
-**Use Edit tool** to make the insertion, preserving all existing content and formatting.
-
-**Post-Insertion QC (Workflowy Compatibility)**:
-
-After inserting the source, verify no empty lines were introduced:
-
-a. Read the updated section from the BrainLift file to verify formatting
-b. Check for empty lines:
-   - Between source entry components (DOK2, DOK1, Link)
-   - Between sources in the same category
-   - Between category headers and Section Summary
-   - Between Section Summary and first source
-c. If empty lines are found, use Edit tool to remove them
-d. Ensure all content maintains proper indentation without spacing
-
-**Why this matters:** Workflowy's indent-based hierarchy breaks with empty lines. All components must be consecutive lines with only indentation defining relationships.
-
-### Step 12.5: Global QC - Remove Empty Lines
-
-After inserting source into the BrainLift file, run a comprehensive QC to ensure Workflowy compatibility:
-
-1. **Run QC command** to remove all empty lines from the entire file:
-   - Use Bash tool with the following command:
-   ```bash
-   grep -v '^$' brainlift/[filename].md > brainlift/[filename].tmp && mv brainlift/[filename].tmp brainlift/[filename].md
+8.4. If creating new category:
+   - Create full category structure:
    ```
-   - Replace `[filename]` with the actual BrainLift filename
-   - This ensures no empty lines exist anywhere in the file
+   - **==[New Category Name]==**
+     - **==Section Summary==**
+       - [PLACEHOLDER: After completing DOK1/DOK2 extraction for all sources, write 2-4 sentences synthesizing themes across ALL sources in this category]
+     - **==Sources==**
+       - [Source entries here]
+   ```
 
-2. **Verify operation**:
-   - Confirm file was updated successfully
-   - Verify all content is preserved (only empty lines removed)
-   - Check that indentation structure is maintained
+### Step 9: Preview Before Insertion
 
-**Why this matters:** Even if templates are clean, the Edit tool or existing file content may contain empty lines. This global QC ensures the entire file is Workflowy-compatible.
-
-### Step 13: Confirm Addition and Prompt for Next Source
-
-After successful insertion:
+9.1. Show the user exactly what will be added and where:
 
 ```
-✓ Successfully added: [Source Title - Author]
-   Location: [Category Name] in [brainlift-filename.md]
-   Format: Workflowy-compatible (no empty lines)
+## Preview of Content to Insert
 
-Remaining sources from this search:
-[List remaining sources by number and title]
+**Location:** **==[Category Name]==** section in DOK2 - Knowledge Tree
 
-Would you like to add another source from this list? (yes/no/done)
+**Content to add:**
+
+[Show the exact formatted content that will be inserted, with proper indentation]
+
+---
+
+This will add [N] new source(s) to your BrainLift.
+
+Do you approve this insertion? (yes / no / edit)
 ```
 
-**If user says yes**:
-- Return to Step 7 with remaining sources
+9.2. Wait for user response:
+   - If "yes": Proceed to Step 10
+   - If "no": Ask "What would you like to change?" → Adjust as needed → Return to Step 9.1 with updated preview
+   - If "edit": Ask "What specific changes do you need?" → Make changes → Return to Step 9.1
 
-**If user says no or done**:
-- Proceed to Step 14
+### Step 10: Insert Content into BrainLift
 
-### Step 14: Continuation Loop
+10.1. Locate the insertion point in the BrainLift file:
+   - If adding to existing category with **==Sources==** section: Insert after the last source in that section
+   - If adding to existing category without **==Sources==** section: Insert **==Sources==** header after Section Summary, then add sources
+   - If creating new category: Insert entire new category structure at the end of DOK2 - Knowledge Tree section
 
-After user finishes adding sources from current batch:
+10.2. Use the `Edit` tool to insert the content:
+   - Maintain proper indentation (match surrounding content)
+   - Ensure no extra empty lines are introduced
+   - Preserve the structure of the Knowledge Tree
 
+10.3. Verify insertion by using `Read` tool to check the relevant section
+
+10.4. Inform user: "✅ Content inserted successfully: [N] source(s) added to **==[Category Name]==**"
+
+### Step 11: WorkFlowy Compatibility QC
+
+11.1. Run the QC command to remove any empty lines:
+```bash
+grep -v '^$' brainlift/[filename].md > brainlift/[filename].tmp && mv brainlift/[filename].tmp brainlift/[filename].md
 ```
-You've added [N] source(s) to your BrainLift in this session.
 
-Would you like to find more sources? (yes/no)
+11.2. Verify no empty lines remain:
+```bash
+grep -c '^$' brainlift/[filename].md
 ```
 
-**If yes**:
-- Return to Step 2 (Key Question Prompt) for a new search
+11.3. Expected result: `0` empty lines
 
-**If no**:
-- Proceed to Step 15 (Completion Summary)
+11.4. If empty lines are found:
+   - Re-run the QC command
+   - Re-verify
+   - If still present, manually inspect and use `Edit` tool to remove
 
-### Step 15: Completion Summary
-
+11.5. Inform user:
 ```
-Great work! You've successfully added new sources to your BrainLift.
-
-**Session Summary:**
-- BrainLift: brainlift/[filename].md
-- Format: Workflowy-compatible (no empty lines)
-- Sources added: [N]
-- Categories updated: [List of category names]
-
-**Next Steps:**
-1. Extract DOK1 facts and DOK2 summaries using /extract-dok1-dok2
-2. Update Section Summaries after completing all sources in each category
-3. Once you have 4+ complete sources, develop DOK3 Insights
-4. With 5+ sources and strong patterns, draft DOK4 Spiky Points of View
-
-**Tip:** Section Summaries should synthesize themes across ALL sources in a category, written after sources are complete.
+✅ WorkFlowy Compatibility Check: PASSED
+   - Empty lines removed: [N]
+   - Current empty line count: 0
 ```
+
+11.6. **Why this matters:** WorkFlowy uses indentation-based hierarchy. Empty lines break parent-child relationships during import, causing structural corruption. This step ensures your BrainLift maintains its structure when imported to WorkFlowy.
+
+### Step 12: Completion and Next Steps
+
+12.1. Show completion summary:
+```
+## Sources Added Successfully
+
+**BrainLift:** [filename]
+**Category:** **==[Category Name]==**
+**Sources Added:** [N]
+
+✅ All sources added with placeholder structure
+✅ WorkFlowy compatibility verified
+
+---
+
+## Next Steps
+
+1. **Extract DOK1 Facts and DOK2 Summaries**
+   - Use `/extract-dok1-dok2` to read each source and extract key content
+   - This will replace the [PLACEHOLDER] text with actual knowledge
+
+2. **Update Section Summary** (if applicable)
+   - After completing DOK1/DOK2 extraction, update the **==Section Summary==** at the top of the category
+   - Should synthesize themes across ALL sources in the category (2-4 sentences)
+
+3. **Continue Building**
+   - Once you have 4+ sources with DOK2 summaries, use `/new-dok3` to create cross-source insights
+   - Continue adding more sources with `/new-sources` to explore different aspects of your topic
+```
+
+12.2. Ask if user wants to continue:
+```
+Would you like to add more sources? (yes / no)
+```
+
+12.3. Wait for user response:
+   - If "yes": Return to Step 3 (ask for new key question)
+   - If "no": End with "Great work! Your BrainLift has been updated."
 
 ## Important Guidelines
 
-### 1. Source Research Quality
+1. **Always Find BrainLift First:** Never ask the user for a BrainLift filename. Use the `find` or `Bash` tool to locate BrainLift files in the brainlift/ directory. Only work with files you have specifically found.
 
-**Find Real, Accessible Sources**:
-- Verify URLs are actual, accessible articles
-- Prioritize diversity of viewpoints
-- Recent content (2024-2025) when possible
-- Mix of source types (academic, industry, blogs, research papers)
+2. **Context-Driven Research:** Always read the BrainLift's Purpose before asking for the key question. This ensures the sources align with the BrainLift's scope.
 
-**Perspective Descriptions**:
-- Be specific about the source's stance or main argument
-- Help user understand what viewpoint this source brings
-- 1-2 sentences maximum
+3. **Diverse Perspectives:** Actively seek sources with different viewpoints. Avoid echo chambers. Look for academic, industry, practitioner, and critical perspectives.
 
-### 2. Formatting Compliance (CRITICAL)
+4. **Recent Sources:** Prioritize 2024-2025 content when possible, but don't sacrifice quality or relevance for recency.
 
-**Section Headers**: Use `**==TEXT==**` format (bold + double equals)
-- `**==DOK2 Summary==**`
-- `**==DOK1 Facts==**`
-- `**==Section Summary==**`
-- `**==[Category Name]==**`
+5. **Placeholder Structure Only:** This command creates the source structure with placeholders. DO NOT attempt to extract DOK1/DOK2 content. That's the job of `/extract-dok1-dok2`.
 
-**Source Entry Format**:
-- Title format: `**[Title] - [Author/Organization] / [Publication] ([Year])**`
-- DOK2 Summary appears BEFORE DOK1 Facts
-- Simple bullet placeholder for DOK1, indented paragraph for DOK2
-- Single "Link:" line at end
+6. **Source Format Compliance:** Follow brainlift-methodology.md exactly:
+   - Format: `**[Source Title] - [Author/Org] / [Publication] ([Year])**`
+   - Headers: `**==DOK2 Summary==**` and `**==DOK1 Facts==**`
+   - Simple bullets under headers (no numbering, no prefixes)
+   - Link line after facts
 
-**NO** numbering in DOK sections:
-- ❌ `**==DOK2-001 Summary==**`
-- ❌ `- DOK1-001: [Fact]`
-- ✅ `**==DOK2 Summary==**`
-- ✅ `- [Fact]`
+7. **WorkFlowy Compatibility:** The QC step in Step 11 is mandatory. Empty lines will break the BrainLift structure when imported to WorkFlowy. Always verify with `grep -c '^$'`.
 
-### 3. Category Placement Logic
+8. **Show Before Insert:** Always preview the exact content and location before insertion. Never insert content without user approval.
 
-**Recommend Existing Category When**:
-- Source theme clearly aligns with existing category theme
-- Category has fewer than 10 sources (not overfilled)
-- Source addresses similar questions to existing sources
+9. **Proper Indentation:** Maintain consistent indentation (2 spaces per level). Match the indentation of surrounding content in the Knowledge Tree.
 
-**Recommend New Category When**:
-- Source addresses distinctly different aspect of BrainLift topic
-- No existing category is thematically appropriate
-- Source introduces new domain or perspective
+10. **Interactive and Iterative:** Give users control at each decision point. Allow refinement, adjustment, and cancellation throughout the process.
 
-**Explain Reasoning**:
-- Always tell user WHY you're recommending a particular placement
-- Reference specific themes, keywords, or topics
-- Consider category balance
+11. **Category Placement Logic:**
+    - Existing category with similar theme → Add to that category
+    - New distinct theme → Create new category
+    - When in doubt → Ask the user
 
-### 4. Section Summary Management
-
-**Update Reminder When**:
-- Adding source to existing category that has placeholder Section Summary
-- Replace placeholder with: `[Update Section Summary after completing sources in this category - synthesize themes across all sources]`
-
-**Leave Unchanged When**:
-- Section Summary has actual synthesized content (not placeholder)
-- User has already written the Section Summary
-
-**Never Auto-Generate**:
-- Don't write Section Summaries automatically
-- They require synthesis across ALL sources in category
-- User should write after completing source DOK1/DOK2 extraction
-
-### 5. Interactive Workflow
-
-**One Source at a Time**:
-- User selects and places each source individually
-- Allows different sources to go to different categories
-- Clear progress tracking
-
-**Approval Gates**:
-- Get approval on source list before selection
-- Allow iteration if sources don't match user needs
-- Confirm placement in category
-
-**Continuation Flexibility**:
-- User controls how many sources to find (1-5)
-- Can add all sources or stop partway
-- Can find multiple batches with different key questions
-
-### 6. Knowledge Tree Structure
-
-**Maintain Hierarchy**:
-```
-- **==DOK2 - Knowledge Tree==**
-  - **==[Category]==**
-    - **==Section Summary==**
-    - [Sources]
-  - **==[Another Category]==**
-    - **==Section Summary==**
-    - [Sources]
-```
-
-**For Large Categories (10+ sources)** - Optional Sub-Sections:
-```
-- **==[Category]==**
-  - **==Section Summary==**
-  - **==[Sub-Section]==**
-    - **==Section Summary==**
-    - [Sources]
-  - **==[Sub-Section 2]==**
-    - **==Section Summary==**
-    - [Sources]
-```
-
-**When Creating New Category**:
-- Place at end of Knowledge Tree (before any closing markers)
-- Include Section Summary placeholder
-- Use clear, descriptive category name
-
-### 7. Error Handling
-
-**If WebSearch fails to find sources**:
-```
-I had difficulty finding sources for that key question. This might be because:
-- The question is too specific or niche
-- Recent sources on this topic are limited
-- The phrasing doesn't match how articles discuss this topic
-
-Would you like to:
-1. Rephrase the key question
-2. Search for a related but broader question
-3. Try a different aspect of the topic
-```
-
-**If BrainLift file parsing fails**:
-```
-I had trouble parsing the Knowledge Tree structure in [filename].
-
-This might be because:
-- The file doesn't follow the standard BrainLift format
-- The Knowledge Tree section is missing or malformed
-
-Would you like me to:
-1. Show you the file structure I found
-2. Proceed by adding to the end of the file
-3. Cancel and check the file format
-```
-
-### 8. Quality Checks Before File Update
-
-Before using Edit tool, verify:
-- [ ] Source entry has all required sections (DOK2, DOK1, Link)
-- [ ] Headers use exact format: `**==DOK2 Summary==**` and `**==DOK1 Facts==**`
-- [ ] Placeholder text is clear and instructive
-- [ ] Link line is at the end
-- [ ] Category structure is correct (Section Summary before sources)
-- [ ] Insertion point is correct (after existing sources in category)
-- [ ] All existing content is preserved
-
-### 9. Workflowy Compatibility
-
-**No Empty Lines**: Sources added to BrainLift files must have NO empty or spacer lines for Workflowy compatibility.
-
-**Why This Matters**:
-- Workflowy uses indent-based hierarchy, not empty lines
-- Empty lines break parent-child relationships during import
-- Continuous lines with proper indentation maintain structure
-- The QC step (Step 12.5) ensures all empty lines are removed
-
-**QC Process**:
-- Source entry templates (Step 11) contain no empty lines by design
-- New category templates (Step 12) contain no empty lines by design
-- Step 12 includes post-insertion verification for local checks
-- Step 12.5 runs global QC to clean entire file
-- Command: `grep -v '^$'` filters out all empty lines
-
-**Manual Verification** (if needed):
-- Open BrainLift file and visually check for blank lines
-- Run: `grep -c '^$' brainlift/[filename].md` (should return 0)
-- If empty lines found, re-run QC command from Step 12.5
-
-**Important**: This applies to the entire BrainLift file, not just newly added sources. The QC step cleans the complete file each time.
+12. **Graceful Error Handling:**
+    - If no BrainLift files found → Direct user to `/new_brainlift`
+    - If user cancels → Exit gracefully with confirmation
+    - If search fails → Offer to try different search terms
 
 ## Success Criteria
 
-The command is successful when:
+Before completing the command, verify:
 
-1. ✓ User selects a BrainLift file (or auto-selected)
-2. ✓ User provides a key question
-3. ✓ Sources are found matching the key question
-4. ✓ User reviews and approves sources
-5. ✓ User selects specific sources to add
-6. ✓ Appropriate category placement is determined
-7. ✓ Sources are inserted with proper formatting
-8. ✓ Section Summary reminders are updated if needed
-9. ✓ All formatting complies with brainlift-methodology.md
-10. ✓ User knows next steps for completing the sources
-11. ✓ Post-insertion QC confirms no empty lines (Workflowy compatible)
+- [ ] BrainLift file was found using `find` or `Bash` tool (not user-provided filename)
+- [ ] BrainLift Purpose was read and used to frame research context
+- [ ] Key question was collected from user AFTER reading BrainLift
+- [ ] WebSearch found 3-5 sources with diverse perspectives
+- [ ] Each source has: Title, Author/Org, Publication, Year, URL, Perspective
+- [ ] User was shown findings and had opportunity to refine
+- [ ] User selected specific sources to add (or chose "all")
+- [ ] Category placement was suggested and user approved
+- [ ] Source structure follows brainlift-methodology.md format exactly
+- [ ] Placeholders are clearly marked for DOK1/DOK2 extraction
+- [ ] Content was previewed with exact indentation before insertion
+- [ ] User approved insertion before it was performed
+- [ ] Content inserted at correct location in Knowledge Tree
+- [ ] Proper indentation maintained (2 spaces per level)
+- [ ] WorkFlowy QC passed: 0 empty lines remain in file
+- [ ] User was guided to use `/extract-dok1-dok2` next
+- [ ] User was offered option to continue adding more sources
 
-## Example Interaction Flow
+## Why This Matters
 
-This demonstrates the complete workflow from command invocation through adding sources:
+The quality of your BrainLift depends on the diversity and relevance of your sources. This command helps you systematically expand your Knowledge Tree by:
 
-```
-User: /new-sources
+1. **Maintaining Context:** By reading the BrainLift's Purpose first, sources stay aligned with your defined scope
+2. **Ensuring Diversity:** Active search for different perspectives prevents confirmation bias
+3. **Preserving Structure:** Proper formatting and WorkFlowy compatibility ensure the knowledge remains usable
+4. **Enabling Synthesis:** Well-organized sources in thematic categories make DOK3 insights and DOK4 SPOVs easier to develop
+
+The placeholder approach (adding structure now, extracting content later) separates concerns and lets you efficiently gather multiple sources before diving deep into extraction work.

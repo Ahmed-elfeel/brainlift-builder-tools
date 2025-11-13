@@ -142,7 +142,7 @@ Your choice:
 
 5.5.1. **Critical**: Run this command to remove any empty lines:
 ```bash
-grep -v '^$' [brainlift-file].md > temp.md && mv temp.md [brainlift-file].md
+grep -v '^$' [brainlift-file].md > [brainlift-file].tmp && mv [brainlift-file].tmp [brainlift-file].md
 ```
 
 5.5.2. Verify zero empty lines:
@@ -156,7 +156,14 @@ Should return: `0`
 - Remove them using Edit tool
 - Re-run verification
 
-**Why this matters**: Workflowy uses indentation-based hierarchy. Empty lines break parent-child relationships during import, causing structural corruption.
+5.5.4. Inform user:
+```
+✅ WorkFlowy Compatibility Check: PASSED
+   - Empty lines removed: [N]
+   - Current empty line count: 0
+```
+
+5.5.5. **Why this matters**: Workflowy uses indentation-based hierarchy. Empty lines break parent-child relationships during import, causing structural corruption.
 
 ---
 
