@@ -1,5 +1,27 @@
 # BrainLift Builder - User Guide
 
+## 🙏 Credits
+**Project initiated by Jamie Sidey**
+- Source: [Google Chat Conversation](https://chat.google.com/room/AAAAm5fzbW8/dRklKfa0EyE/dRklKfa0EyE?cls=10)
+- Original concept and methodology design
+
+---
+
+## 🚀 Quick Install (For Team Members - 2 Minutes!)
+
+**Don't know GitHub? No problem!** Just copy-paste this into Claude Code:
+
+```
+Clone this repository to my computer:
+https://github.com/Ahmed-elfeel/brainlift-builder-tools
+
+Then explain what BrainLift Builder is and how to use it.
+```
+
+Claude Code will handle everything automatically! ✨
+
+---
+
 Welcome! This toolkit provides Claude Code commands to help you build **BrainLifts** - structured knowledge documents that organize research using a hierarchical "Depth of Knowledge" (DOK) system.
 
 **What is a BrainLift?** A progressive disclosure document where knowledge is built bottom-up (from atomic facts to insights) but presented top-down (conclusions first, evidence deeper). Think of it as an inverted pyramid of knowledge optimized for WorkFlowy.
