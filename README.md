@@ -1,13 +1,6 @@
 # BrainLift Builder - User Guide
 
-## 🙏 Credits
-**Project initiated by Jamie Sidey**
-- Source: [Google Chat Conversation](https://chat.google.com/room/AAAAm5fzbW8/dRklKfa0EyE/dRklKfa0EyE?cls=10)
-- Original concept and methodology design
-
----
-
-## 🚀 Quick Install (For Team Members - 2 Minutes!)
+##  Quick Install
 
 **Don't know GitHub? No problem!** Just copy-paste this into Claude Code:
 
@@ -18,7 +11,7 @@ https://github.com/Ahmed-elfeel/brainlift-builder-tools
 Then explain what BrainLift Builder is and how to use it.
 ```
 
-Claude Code will handle everything automatically! ✨
+Claude Code will handle everything automatically!
 
 ---
 
